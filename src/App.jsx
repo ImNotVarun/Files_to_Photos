@@ -31,11 +31,10 @@ function App() {
           File to Image<br />Converter
         </h1>
 
-
         <div className="flex flex-col md:flex-row gap-8">
           <div className="flex-1 bg-gray-800 rounded-lg p-4">
             <img
-              src="src\assets\Photo.jpg"
+              src="/src/assets/Photo.jpg"
               alt="Sample image"
               style={{ width: '420px', height: '475px', objectFit: 'cover' }}
               className="w-full h-auto rounded-lg"
@@ -54,7 +53,7 @@ function App() {
         </div>
         {isLoading && <LoadingBar progress={progress} />}
       </div>
-      {/* Top-right corner decoration */}
+      {/* Decorations */}
       <div className="absolute top-0 right-0 w-32 h-32">
         <svg viewBox="0 0 100 100" className="w-full h-full">
           <path
@@ -65,8 +64,6 @@ function App() {
           />
         </svg>
       </div>
-
-      {/* Bottom-right corner decoration */}
       <div className="absolute top-0 right-40 w-32 h-32">
         <svg viewBox="0 0 100 100" className="w-full h-full">
           <path
