@@ -1,12 +1,7 @@
 {
-    "version": 2,
     "builds": [
         {
-            "src": "run_app.py",
-            "use": "@vercel/python"
-        },
-        {
-            "src": "package.json",
+            "src": "vite.config.js",
             "use": "@vercel/static-build",
             "config": {
                 "distDir": "dist"
@@ -15,12 +10,8 @@
     ],
     "routes": [
         {
-            "src": "/static/(.*)",
-            "dest": "/static/$1"
-        },
-        {
             "src": "/(.*)",
-            "dest": "run_app.py"
+            "dest": "/index.html"
         }
     ]
 }
