@@ -3,15 +3,17 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  define: {
-    'process.env.VITE_API_URL': JSON.stringify(process.env.VITE_API_URL),
-  },
   server: {
     proxy: {
-      '/api': {
-        target: process.env.VITE_API_URL || 'http://localhost:5000',
+      '/upload_files': {
+        target: 'http://localhost:5000',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
+        secure: false,
+      },
+      '/extract_files': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+        secure: false,
       }
     }
   },

@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Upload, Plus } from 'lucide-react';
 
-const API_URL = import.meta.env.VITE_API_URL || '';
-
 function FileUpload({ setIsLoading, onProgress }) {
     const [files, setFiles] = useState([]);
     const [existingImage, setExistingImage] = useState(null);
@@ -26,7 +24,7 @@ function FileUpload({ setIsLoading, onProgress }) {
         }
 
         try {
-            const response = await fetch(`${API_URL}/upload_files`, {
+            const response = await fetch('/upload_files', {
                 method: 'POST',
                 body: formData,
                 onUploadProgress: onProgress,

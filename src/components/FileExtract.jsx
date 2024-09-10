@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Upload } from 'lucide-react';
 
-const API_URL = import.meta.env.VITE_API_URL || '';
-
 function FileExtract({ setIsLoading, onProgress }) {
     const [image, setImage] = useState(null);
 
@@ -18,7 +16,7 @@ function FileExtract({ setIsLoading, onProgress }) {
         formData.append('image', image);
 
         try {
-            const response = await fetch(`${API_URL}/extract_files`, {
+            const response = await fetch('/extract_files', {
                 method: 'POST',
                 body: formData,
                 onUploadProgress: onProgress,
