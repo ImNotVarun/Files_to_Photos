@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Upload } from 'lucide-react';
 
 function FileExtract({ setIsLoading, onProgress }) {
     const [image, setImage] = useState(null);
@@ -44,17 +45,27 @@ function FileExtract({ setIsLoading, onProgress }) {
 
     return (
         <form onSubmit={handleSubmit} className="FileExtract">
-            <div>
-                <label htmlFor="image">Select image to extract files:</label>
+            <div className="border-2 border-dashed border-gray-600 rounded-lg p-8 text-center">
                 <input
                     type="file"
                     id="image"
                     accept="image/*"
                     onChange={handleImageChange}
+                    className="hidden"
                 />
-                <span className="file-info">{image ? '1 file selected' : ''}</span>
+                <label htmlFor="image" className="bg-blue-500 text-white px-6 py-3 rounded-full inline-block cursor-pointer hover:bg-blue-600 transition-colors">
+                    <Upload className="inline-block mr-2" />
+                    Select Image to Extract
+                </label>
+                <p className="mt-4 text-gray-400">
+                    {image ? '1 file selected' : 'or drop image here'}
+                </p>
             </div>
-            <button type="submit">Extract Files</button>
+            <div className="mt-4 text-center">
+                <button type="submit" className="bg-purple-500 text-white px-8 py-3 rounded-full inline-block cursor-pointer hover:bg-purple-600 transition-colors">
+                    Extract Files
+                </button>
+            </div>
         </form>
     );
 }
