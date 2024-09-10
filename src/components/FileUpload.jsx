@@ -24,7 +24,7 @@ function FileUpload({ setIsLoading, onProgress }) {
         }
 
         try {
-            const response = await fetch('/upload_files', {
+            const response = await fetch('/api/upload_files', {
                 method: 'POST',
                 body: formData,
                 onUploadProgress: onProgress,

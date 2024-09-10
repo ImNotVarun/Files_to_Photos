@@ -16,7 +16,7 @@ function FileExtract({ setIsLoading, onProgress }) {
         formData.append('image', image);
 
         try {
-            const response = await fetch('/extract_files', {
+            const response = await fetch('/api/extract_files', {
                 method: 'POST',
                 body: formData,
                 onUploadProgress: onProgress,

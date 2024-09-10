@@ -1,11 +1,13 @@
-from flask import Blueprint, request, send_file, redirect, url_for
+from flask import Flask, request, send_file, redirect, url_for
+from flask_cors import CORS
 from PIL import Image
 import numpy as np
 import io
 import zipfile
 import base64
 
-app = Blueprint('app', __name__)
+app = Flask(__name__)
+CORS(app)
 
 
 def files_to_image(files, existing_image=None):
@@ -79,3 +81,7 @@ def extract_files():
             zip_file.writestr(file_name, data)
     zip_buffer.seek(0)
     return send_file(zip_buffer, mimetype='application/zip', as_attachment=True, download_name='extracted_files.zip')
+
+
+if __name__ == '__main__':
+    app.run()
