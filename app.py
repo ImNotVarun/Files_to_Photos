@@ -1,4 +1,4 @@
-from flask import Flask, request, send_file, redirect, url_for
+from flask import Flask, request, send_file, redirect, url_for, jsonify
 from flask_cors import CORS
 from PIL import Image
 import numpy as np
@@ -82,6 +82,11 @@ def extract_files():
             zip_file.writestr(file_name, data)
     zip_buffer.seek(0)
     return send_file(zip_buffer, mimetype='application/zip', as_attachment=True, download_name='extracted_files.zip')
+
+
+@app.route('/')
+def home():
+    return jsonify({"message": "Welcome to the Files to Photos API"})
 
 
 if __name__ == '__main__':
