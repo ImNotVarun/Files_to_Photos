@@ -3,6 +3,7 @@ import FileUpload from './components/FileUpload';
 import FileExtract from './components/FileExtract';
 import LoadingBar from './components/LoadingBar';
 import { Upload } from 'lucide-react';
+import photoSrc from './assets/photo.jpg';  // Import the image
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -31,14 +32,17 @@ function App() {
           File to Image<br />Converter
         </h1>
 
-
         <div className="flex flex-col md:flex-row gap-8">
           <div className="flex-1 bg-gray-800 rounded-lg p-4">
             <img
-              src="src\assets\photo.jpg"
+              src={photoSrc}  // Use the imported image source
               alt="Sample image"
               style={{ width: '420px', height: '475px', objectFit: 'cover' }}
               className="w-full h-auto rounded-lg"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = 'https://via.placeholder.com/420x475?text=Image+Not+Found';
+              }}
             />
           </div>
           <div className="flex-1 flex flex-col justify-center">
