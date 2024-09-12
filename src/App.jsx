@@ -35,7 +35,7 @@ function App() {
         <div className="flex flex-col md:flex-row gap-8">
           <div className="flex-1 bg-gray-800 rounded-lg p-4">
             <img
-              src="src\assets\Photo.jpg"
+              src="src\assets\photo.jpg"
               alt="Sample image"
               style={{ width: '420px', height: '475px', objectFit: 'cover' }}
               className="w-full h-auto rounded-lg"
