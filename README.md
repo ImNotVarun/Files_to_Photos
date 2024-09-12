@@ -54,7 +54,7 @@ Before you begin, ensure you have met the following requirements:
 
 ### Backend
 
-1. Create a virtual environment:
+1. (optional) Create a virtual environment:
    ```
    python -m venv venv
    ```
