@@ -23,8 +23,10 @@ function FileUpload({ setIsLoading, onProgress }) {
             formData.append('existing_image', existingImage);
         }
 
+        const API_URL = import.meta.env.VITE_API_URL || '';
+
         try {
-            const response = await fetch('/upload_files', {
+            const response = await fetch(`${API_URL}/upload_files`, {
                 method: 'POST',
                 body: formData,
                 onUploadProgress: onProgress,

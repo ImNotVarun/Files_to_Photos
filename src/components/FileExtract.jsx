@@ -15,8 +15,10 @@ function FileExtract({ setIsLoading, onProgress }) {
         const formData = new FormData();
         formData.append('image', image);
 
+        const API_URL = import.meta.env.VITE_API_URL || '';
+
         try {
-            const response = await fetch('/extract_files', {
+            const response = await fetch(`${API_URL}/extract_files`, {
                 method: 'POST',
                 body: formData,
                 onUploadProgress: onProgress,
