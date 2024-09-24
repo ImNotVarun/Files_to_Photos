@@ -22,7 +22,7 @@ function App() {
         <h1
           className="text-6xl font-bold mb-8"
           style={{
-            background: 'linear-gradient(to top, #ffffff, #b0b0b0, #000000)',
+            background: 'linear-gradient(to right, #ffffff, #b0b0b0, #000000)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             textAlign: 'center',
