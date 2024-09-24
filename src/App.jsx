@@ -31,6 +31,18 @@ function App() {
         >
           File to Image<br />Converter
         </h1>
+        <h4
+          className="text-3xl font-bold mb-8"
+          style={{
+            color: 'red',
+            WebkitBackgroundClip: 'text',
+            textAlign: 'center',
+            marginBottom: '60px',
+          }}
+        >
+          * The backend is hosted on a free service and may take up to 50 seconds to initialize the first request
+        </h4>
+
 
         <div className="flex flex-col md:flex-row gap-8">
           <div className="flex-1 bg-gray-800 rounded-lg p-4">
@@ -81,7 +93,7 @@ function App() {
           />
         </svg>
       </div>
-    </div>
+    </div >
   );
 }
 
